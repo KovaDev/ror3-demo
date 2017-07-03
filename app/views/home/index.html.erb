@@ -1,11 +1,7 @@
 <h1><%= @welcome_message %></h1>
 <br>
 
-<% if @broj > 3 %>
-  <h1>Broj je veci od 3</h1>
-<% else %>
-  <h1>Broj je manji</h1>
-<% end %>
+<%= message_for_number @broj, :h3 %>
 
 <button class="btn btn-primary">Click me</button>
 

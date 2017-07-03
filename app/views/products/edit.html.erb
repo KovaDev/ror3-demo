@@ -4,29 +4,7 @@
     <h1>Update product</h1>
     <br>
 
-    <% if @product.errors.any? %>
-      <div class="alert alert-danger">
-        <% @product.errors.full_messages.each do |error| %>
-          <p><%= error %></p>
-        <% end %>
-      </div>
-    <% end %>
-
-    <%= form_for @product do |form| %>
-      <%= form.label :name %>
-      <%= form.text_field :name, class: 'form-control' %>
-      <br>
-      <%= form.label :price %>
-      <%= form.text_field :price, class: 'form-control' %>
-      <br>
-      <%= form.label :description, 'Description (optional)' %>
-      <%= form.text_area :description, class: 'form-control' %>
-      <br>
-      <%= form.label :seller_id %>
-      <%= form.collection_select :seller_id, Seller.all, :id, :name, { prompt: 'Choose seller' }, class: 'form-control' %>
-      <br>
-      <%= form.submit 'Update', class: 'btn btn-block btn-default' %>
-    <% end %>
-
+    <%= render 'shared/validation_messages', model: @product %>
+    <%= render 'form' %>
   </div>
 </div>

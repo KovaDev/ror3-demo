@@ -20,11 +20,7 @@
 
   <body>
     <div class="container">
-      <ol class="breadcrumb">
-        <li class="<%= 'active' if params[:action] == 'index' %>"><%= link_to 'Home', root_path %></li>
-        <li class="<%= 'active' if params[:action] == 'test' %>"><%= link_to 'Test', test_path %></li>
-        <li class="<%= 'active' if params[:action] == 'products' %>"><%= link_to 'Products', products_path %></li>
-      </ol>
+      <%= render 'shared/header' %>
 
       <%= yield %>
     </div>

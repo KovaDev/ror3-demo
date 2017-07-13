@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-8">
     <h1>Products <%= link_to 'Create new', new_product_path, class: 'btn btn-primary' %></h1>
     <%= count_for @products, 'Total' %>
     <br>
@@ -17,6 +17,9 @@
         <tr>
           <th>Name</th>
           <th>Price</th>
+          <th>Seller</th>
+          <th>Category</th>
+          <th>Created at</th>
           <th>Actions</th>
         </tr>
       </thead>

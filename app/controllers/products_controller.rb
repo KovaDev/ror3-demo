@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :find_product, { only: [:edit, :update, :show, :destroy] }
 
   def index
-    @products = Product.all
+    @products = Product.order(price: :desc)
   end
 
   def new
@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :price, :description, :seller_id);
+    params.require(:product).permit(:name, :price, :description, :seller_id, :category_id);
   end
 
   def find_product

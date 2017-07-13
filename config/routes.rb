@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :categories
+  resources :sellers
   root "home#index"
 
   # get '/test', controller: 'home', action: 'test'

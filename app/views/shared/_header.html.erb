@@ -2,4 +2,14 @@
   <li class="<%= 'active' if params[:action] == 'index' %>"><%= link_to 'Home', root_path %></li>
   <li class="<%= 'active' if params[:action] == 'test' %>"><%= link_to 'Test', test_path %></li>
   <li class="<%= 'active' if params[:action] == 'products' %>"><%= link_to 'Products', products_path %></li>
+
+  <% if current_user %>
+    <li><%= current_user.username %></li>
+  <% end %>
+  <% unless current_user %>
+    <li><%= link_to 'Login', new_session_path %></li>
+  <% end %>
+  <% if current_user %>
+    <li><%= link_to 'Logout', session_path, method: :delete %></li>
+  <% end %>
 </ol>

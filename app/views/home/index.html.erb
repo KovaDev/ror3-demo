@@ -1,6 +1,8 @@
 <h1><%= @welcome_message %></h1>
 <br>
 
+<%= display_flash :notice %>
+
 <%= message_for_number @broj, :h3 %>
 
 <button class="btn btn-primary">Click me</button>

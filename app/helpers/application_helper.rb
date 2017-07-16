@@ -24,4 +24,10 @@ module ApplicationHelper
   def parse_attribute(attribute)
     attribute.to_s.capitalize.split('_').join(' ')
   end
+
+  def navbar_link(options)
+    content_tag :li, nil, class: params[options[action]] do
+      content_tag :p, flash[type]
+    end
+  end
 end

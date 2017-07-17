@@ -3,6 +3,11 @@ Rails.application.routes.draw do
 
   get '/test' => 'home#test'
 
+  namespace :admin do
+    resource :dashboard, only: [:show]
+    resources :products
+  end
+
   resources :categories
   resources :sellers
   resources :users, only: [:new, :create]

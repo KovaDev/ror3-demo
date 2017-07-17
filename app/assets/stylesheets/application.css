@@ -17,3 +17,11 @@
 .validation-error {
   color: red;
 }
+
+.jumbotron {
+  background: red;
+}
+
+.heading {
+  color: lightblue;
+}

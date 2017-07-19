@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :categories
   resources :sellers
+  resources :orders
   resources :users, only: [:new, :create]
   resource :about, only: [:show]
   resource :session, only: [:new, :create, :destroy]

@@ -1,19 +1,10 @@
 <div class="row">
   <div class="col-md-8">
-    <h1>Products <%= link_to 'Create new', new_product_path, class: 'btn btn-primary' %></h1>
+    <h1>Expensive Products</h1>
     <%= count_for @products, 'Total' %>
     <br>
 
-    <% unless flash[:notice].blank? %>
-      <div class="alert alert-success">
-        <p><%= flash[:notice] %></p>
-      </div>
-    <% end %>
-
     <div id="product-alerts"></div>
-
-    <%= link_to 'Expensive products', expensive_products_path, class: 'btn btn-success' %>
-    <%= link_to 'Cheap products', cheap_products_path, class: 'btn btn-danger' %>
 
     <h3>Product details</h3>
 

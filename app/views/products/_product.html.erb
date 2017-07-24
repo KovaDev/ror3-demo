@@ -2,7 +2,7 @@
   <td><%= link_to product.name, product_path(product) %></td>
   <td><%= product.price %></td>
   <td><%= link_to product.seller.name, seller_path(product.seller) %></td>
-  <td><%= link_to product.category.name, category_path(product.category) %></td>
+  <td><%= link_to product.category.name, products_path(category: product.category.name) %></td>
   <td><%= product.created_at.strftime('%F') %></td>
   <td>
     <%= link_to 'Buy', orders_path(product_id: product.id), method: :post, remote: true, class: 'btn btn-success' %>

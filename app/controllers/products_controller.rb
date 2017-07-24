@@ -3,7 +3,8 @@ class ProductsController < ApplicationController
   before_action :find_product, { only: [:edit, :update, :show, :destroy] }
 
   def index
-    @products = Product.order(price: :desc)
+    # @products = filter_products
+    @products = Product.expensive_first
 
     respond_to do |format|
       format.html
@@ -47,6 +48,14 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
+  def expensive
+    @products = Product.expensive_latest
+  end
+
+  def cheap
+    @products = Product.cheap_latest
+  end
+
   private
 
   def product_params
@@ -56,4 +65,13 @@ class ProductsController < ApplicationController
   def find_product
     @product = Product.find(params[:id])
   end
+
+  # def filter_products
+  #   if params[:category]
+  #     category = Category.where(name: params[:category])
+  #     products = Product.where(category: category).order(price: :desc)
+  #   else
+  #     products = Product.order(price: :desc)
+  #   end
+  # end
 end

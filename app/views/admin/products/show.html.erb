@@ -8,5 +8,12 @@
     <br>
     <p><strong>Description:</strong></p>
     <p><%= @product.description %></p>
+    <br><br>
+    <p><strong>Category:</strong></p>
+    <p><%= @product.category.name %></p>
+    <br><br>
+    <%= link_to 'Add to category', edit_admin_product_path(@product), remote: true, class: 'btn btn-danger' %>
   </div>
 </div>
+
+<div id="add-category-modal-placeholder"></div>

@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :seller
-  belongs_to :category
+  belongs_to :category, optional: true
 
   has_many :orders
   has_many :buyers, through: :orders, source: :user

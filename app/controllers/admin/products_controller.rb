@@ -27,13 +27,25 @@ class Admin::ProductsController < Admin::BaseController
   end
 
   def edit
+    @product = Product.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def update
     if @product.update(product_params)
-      redirect_to [:admin, @product]
+      respond_to do |format|
+        format.html { redirect_to [:admin, @product] }
+        format.js
+      end
     else
-      render :edit
+      respond_to do |format|
+        format.html { render :edit }
+        format.js
+      end
     end
   end
 

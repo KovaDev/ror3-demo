@@ -1,0 +1,26 @@
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <%= form_for [:admin, @product], remote: true do |form| %>
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add product "<%= @product.name %>" to category</h4>
+        </div>
+        <div class="modal-body">
+          <%= form.label :category_id %>
+          <%= form.collection_select :category_id, Category.all, :id, :name, { prompt: 'Choose category' }, class: 'form-control' %>
+          <br>
+        </div>
+        <div class="modal-footer">
+          <%= form.submit 'Save', class: 'btn btn-primary' %>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>

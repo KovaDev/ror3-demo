@@ -17,9 +17,9 @@
   <%= form.collection_select :seller_id, Seller.all, :id, :name, { prompt: 'Choose seller' }, class: 'form-control' %>
   <%= error_for :seller, @product.errors %>
   <br>
-  <%= form.label :category_id %>
-  <%= form.collection_select :category_id, Category.all, :id, :name, { prompt: 'Choose category' }, class: 'form-control' %>
-  <%= error_for :category, @product.errors %>
+  <%#= form.label :category_id %>
+  <%#= form.collection_select :category_id, Category.all, :id, :name, { prompt: 'Choose category' }, class: 'form-control' %>
+  <%#= error_for :category, @product.errors %>
   <br>
   <%= form.submit params[:action] == 'new' ? 'Save' : 'Update', class: 'btn btn-block btn-default' %>
 <% end %>
